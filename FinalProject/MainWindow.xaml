@@ -1,0 +1,15 @@
+﻿<Window x:Class="GolfScoreManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:FinalProject"
+        Title="Golf Score Manager" Height="550" Width="900">
+    <Grid x:Name="mainGrid">
+        <Frame x:Name="mainFrame" Grid.Row="2" NavigationUIVisibility="Hidden">
+            <Frame.Content>
+                <local:HomePage />
+            </Frame.Content>
+        </Frame>
+
+
+    </Grid>
+</Window>
+    

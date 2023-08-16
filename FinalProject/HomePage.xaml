@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="FinalProject.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalProject"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Golf Score Manager" Foreground="#FF2B9AF9" FontFamily="Segoe UI"
+           FontWeight="Bold" FontSize="36" Margin="20 20 0 20">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="1" Color="#4682B4"
+                          Opacity="1" RenderingBias="Quality"
+                          Direction="0" ShadowDepth="1" />
+            </TextBlock.Effect>
+        </TextBlock>
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0" Margin="25,0,25,0" HorizontalAlignment="Center">
+                <TextBlock Text="Course/Date/Score:"/>
+                <ListBox Name="roundHolder"  Margin="10"/>
+                <StackPanel Orientation="Horizontal" >
+                    <Button Content="Load rounds" Click="LoadRounds_Click" Width="80" Background="#FF2B9AF9" BorderBrush="#FF2271D1" BorderThickness="1" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12"/>
+                    <Button Content="Save rounds" Click="SaveRounds_Click" Margin="10,0,10,0" Width="80" Background="#FF2B9AF9" BorderBrush="#FF2271D1" BorderThickness="1" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12"/>
+                    <Button Content="Delete round" Click="DeleteRound_Click" Width="80" Background="#FF2B9AF9" BorderBrush="#FF2271D1" BorderThickness="1" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="25,0,25,0" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox  Header="Best Score" Margin="0,0,0,10" >
+                        <TextBlock Name="bestScore" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                    <GroupBox  Header="Average Score" Margin="0,0,0,10" >
+                        <TextBlock Name="avgScore" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Header="GIR %" Margin="0,0,0,10" >
+                        <TextBlock Name="gir" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                    <GroupBox Header="Putts Per Hole" Margin="0,0,0,10" >
+                        <TextBlock Name="pph" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Margin="25,0,25,0" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox  Header="Birdie %" Margin="0,0,0,10" >
+                        <TextBlock Name="birdiepct" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                    <GroupBox  Header="Par %" Margin="0,0,0,10" >
+                        <TextBlock Name="parpct" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                    <GroupBox  Header="Bogey %" Margin="0,0,0,10" >
+                        <TextBlock Name="bogeypct" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox  Header="Better than Birdie %" Margin="0,0,0,10" >
+                        <TextBlock Name="btbirdiepct" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                    <GroupBox  Header="Worse than Bogey %" Margin="0,0,0,10" >
+                        <TextBlock Name="wtbogeypct" Text="0" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Background="#FF2B9AF9" BorderBrush="#FF2271D1" BorderThickness="1" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" FontSize="14"
+            Padding="10 5" Margin="10" HorizontalAlignment="Center" Grid.Row="3" Content="Add Round" Width="125" Height="50" Click="AddRoundButton_Click"/>
+            <Button Background="#FF2B9AF9" BorderBrush="#FF2271D1" BorderThickness="1" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" FontSize="14"
+            Padding="10 5" Margin="10" HorizontalAlignment="Center" Grid.Row="3" Content="Simulate Round" Width="175" Height="50" Click="GenerateRoundButton_Click"/>
+
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
